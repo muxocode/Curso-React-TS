@@ -1,9 +1,10 @@
-import React from "react"
+import React, { PropsWithChildren } from "react"
+import "./Content.css"
 
-export const Content = ()=>{
-    return <div>
+export const Content = (props: Readonly<PropsWithChildren<{}>>)=>{
+    return <div className="appBody">
         <p>
-            Contenido
+            {props.children}
         </p>
     </div>
 }

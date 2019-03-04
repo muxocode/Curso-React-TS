@@ -1,0 +1,1 @@
+export {Texto} from "./Texto"
