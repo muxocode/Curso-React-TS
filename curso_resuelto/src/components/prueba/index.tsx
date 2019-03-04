@@ -1,0 +1,1 @@
+export {Prueba} from "./Prueba"
