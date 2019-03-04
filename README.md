@@ -9,6 +9,15 @@ Se puede encontrar en el siguiente enlace: [Introducción a REACT con TypeScript
 ```shell
 npm -v
 ```
+## Instalar una nueva app-react
+```shell
+npx create-react-app <nombre> --typescript
+```
+## Arrancar el proyecto
+Nos situamos en la carpeta raíz del proyecto
+```shell
+npm run start
+```
 ## Instalar BOOTSTRAP
 ```shell
 npm install --save react-bootstrap
@@ -26,4 +35,14 @@ En la página principal (index.htm) añadimos
 />
 [Opcional]
 <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css" crossorigin="anonymous"/>
+```
+## Pasar los test
+Nos situamos en la carpeta raíz del proyecto
+```shell
+npm run test
+```
+## Para publicar
+Nos situamos en la carpeta raíz del proyecto
+```shell
+npm run build
 ```
