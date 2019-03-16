@@ -3,8 +3,8 @@ import "./Content.css"
 
 export const Content = (props: Readonly<PropsWithChildren<{}>>)=>{
     return <div className="appBody">
-        <p>
+        <div>
             {props.children}
-        </p>
+        </div>
     </div>
 }

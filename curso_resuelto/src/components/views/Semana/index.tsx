@@ -1,1 +1,1 @@
-export {Semana} from "./Semana"
+export {SemanaView} from "./SemanaView"

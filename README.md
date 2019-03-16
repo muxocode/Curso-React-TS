@@ -41,6 +41,12 @@ Nos situamos en la carpeta raíz del proyecto
 ```shell
 npm run test
 ```
+##Añadir routing
+Tenemos un ejemplo en 
+https://facebook.github.io/create-react-app/docs/adding-a-router
+```shell
+npm install --save react-router-dom
+```
 ## Para publicar
 Nos situamos en la carpeta raíz del proyecto
 ```shell
