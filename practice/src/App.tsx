@@ -1,29 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { CSSProperties } from 'react';
 import './App.css';
-import {Cosa} from "./components/Cosa"
+import {Prueba} from "./components/prueba/Prueba"
+import {Content, MenuHorizontal} from "./components/common"
 
-class App extends Component {
+class App extends React.Component {
   render() {
-    return (
-      <div className="App">
-      <Cosa></Cosa>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit sibran <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    let bControl:boolean = true;
+    let oResult:any=null;
+    if(bControl){
+      oResult= <label>texto de label</label>
+    }
+
+    let osaludo:string = `hola 
+    
+    ${3+2}`;
+    let myStye:CSSProperties= {color:"green", textAlign:"center"}
+
+    return <div className={"clase"} style={myStye}>
+      {osaludo}
+      <p>
+        {oResult}
+      </p>
+      <Prueba></Prueba>
+      <Content></Content>
+      <MenuHorizontal></MenuHorizontal>
+    </div>;
   }
 }
 
