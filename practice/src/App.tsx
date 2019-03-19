@@ -2,6 +2,9 @@ import React, { CSSProperties } from 'react';
 import './App.css';
 import {Prueba} from "./components/prueba/Prueba"
 import {Content, MenuHorizontal} from "./components/common"
+import mylogo from "./logo.svg"
+import {SemanaView} from "./Views"
+import {Texto} from "./components/common"
 
 class App extends React.Component {
   render() {
@@ -10,6 +13,8 @@ class App extends React.Component {
     if(bControl){
       oResult= <label>texto de label</label>
     }
+
+    let aArray=[1,2,3,4,5,6,7,8];
 
     let osaludo:string = `hola 
     
@@ -21,9 +26,23 @@ class App extends React.Component {
       <p>
         {oResult}
       </p>
-      <Prueba></Prueba>
-      <Content></Content>
-      <MenuHorizontal></MenuHorizontal>
+      <img src={mylogo} style={{maxWidth:"100px"}}/>
+      <div style={{backgroundImage:`url(${mylogo})`}}>
+        <Prueba></Prueba>
+        <Content></Content>
+        <MenuHorizontal></MenuHorizontal>
+        {
+          aArray.map(x=>{
+            return <p>{`EL número es ${x}`}</p>
+          })
+        }
+        <Texto texto="Hola">Cuperpo</Texto>
+        <Texto texto="Días laborables">
+          <SemanaView></SemanaView>
+        </Texto>
+        
+      </div>
+
     </div>;
   }
 }

@@ -1,0 +1,1 @@
+export {SemanaView} from "./Semana/SemanaView"
