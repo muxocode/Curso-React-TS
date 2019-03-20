@@ -1,7 +1,8 @@
 import React from "react"
+import "./Content.css"
 
 export class Content extends React.Component{
     render(){
-        return <div>Content</div>
+        return <div className="Content">{this.props.children}</div>
     }
 }
