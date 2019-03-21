@@ -7,34 +7,32 @@ import {SemanaView} from "./Views"
 import {Texto} from "./components/common"
 import { IItemMenu } from './components/common/MenuHotizontal/IItemMenu';
 import {Filter} from "./components/common/filter"
+import { BrowserRouter, Route } from 'react-router-dom';
+import * as Vistas from "./Views"
 
 class App extends React.Component {
   render() {
 
     let aItemsMenu:IItemMenu[]=[];
 
-    aItemsMenu.push({nombe:"Home", url:"#home"});
-    aItemsMenu.push({nombe:"About", url:"#home"});
-    aItemsMenu.push({nombe:"Usuarios", url:"#home"});
-    aItemsMenu.push({nombe:"Semana", url:"#home"});
-
-    if(aItemsMenu){
-      //...
-    }
+    aItemsMenu.push({nombe:"Home", url:"/home"});
+    aItemsMenu.push({nombe:"About", url:"/about"});
+    aItemsMenu.push({nombe:"Usuarios", url:"/usuarios"});
+    aItemsMenu.push({nombe:"Semana", url:"/semana"});
 
     return <div className={"clase"} style={{height:"5000px"}}>
-      <MenuHorizontal items={aItemsMenu} fixed></MenuHorizontal>
-        <Content>
-          <Filter btnClick={this.ReciveText} btnText="pulsa!" placeholder="Escrbe aquí..." value="filtro de prueba"></Filter>
-          <Prueba></Prueba>
-          <Texto texto="Hola">Cuperpo</Texto>
-          <Texto texto="Días laborables">
-            <SemanaView></SemanaView>
-          </Texto>
-        </Content>
-        
+    <BrowserRouter>
+          <Content>
+            <MenuHorizontal items={aItemsMenu} fixed></MenuHorizontal>
+            <Route exact path="/" component={Vistas.HomeView}></Route>
+            <Route exact path="/Home" component={Vistas.HomeView}></Route>
+            <Route exact path="/USuarios" component={Vistas.UsuariosView}></Route>
+            <Route exact path="/About" component={Vistas.AboutView}></Route>
+            <Route exact path="/Semana" component={Vistas.SemanaView}></Route>
+            <Route exact path="/Usuarios/:id" component={Vistas.FichaUsuarioView}></Route>
+          </Content>
+    </BrowserRouter>
 
-        
       </div>
   }
 

@@ -1,6 +1,7 @@
 import React from "react"
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 import {IItemMenu} from "./IItemMenu"
+import { Link } from 'react-router-dom';
 
 interface IMenuHorizontalModel{
     items:IItemMenu[],
@@ -15,7 +16,9 @@ export class MenuHorizontal extends React.Component<IMenuHorizontalModel>{
                     <Nav className="mr-auto">
                     {
                         this.props.items.map(x=>{
-                            return <Nav.Link key={x.nombe} href={x.url}>{x.nombe}</Nav.Link>
+                            return <Nav.Link key={x.nombe}>
+                                <Link to={x.url}>{x.nombe}</Link>
+                            </Nav.Link>
                         })
                     }
                     </Nav>
