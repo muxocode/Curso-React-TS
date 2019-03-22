@@ -19,6 +19,10 @@ class App extends React.Component {
     aItemsMenu.push({nombe:"About", url:"/about"});
     aItemsMenu.push({nombe:"Usuarios", url:"/usuarios"});
     aItemsMenu.push({nombe:"Semana", url:"/semana"});
+    aItemsMenu.push({nombe:"Contador", url:"/contador"});
+    aItemsMenu.push({nombe:"Sumador", url:"/sumador"});
+
+
 
     return <div className={"clase"} style={{height:"5000px"}}>
     <BrowserRouter>
@@ -30,6 +34,9 @@ class App extends React.Component {
             <Route exact path="/About" component={Vistas.AboutView}></Route>
             <Route exact path="/Semana" component={Vistas.SemanaView}></Route>
             <Route exact path="/Usuarios/:id" component={Vistas.FichaUsuarioView}></Route>
+            <Route exact path="/Contador" component={Vistas.ContadorView}></Route>
+            <Route exact path="/Sumador" component={Vistas.SumadorView}></Route>          
+
           </Content>
     </BrowserRouter>
 
