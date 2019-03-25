@@ -16,7 +16,9 @@ export class SumadorView extends ContadorView<ISumadorModel>{
 
     constructor(props:ISumadorModel){
         super(props);
+    }
 
+    componentDidMount(){
         setInterval(()=>{
             this.Sumar(this.props.step!);
         },this.props.time!)

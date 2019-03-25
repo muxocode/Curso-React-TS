@@ -1,19 +1,25 @@
 import React from "react"
 import {Usuario} from "../../model/Usuario"
 import { Link } from "react-router-dom";
+import {UsuarioService} from "../../services/Usuario.service"
 
-export class UsuariosView extends React.Component{
+export class UsuariosView extends React.Component<{},{aListaUsuarios:Usuario[]}>{
+
+    state={
+        aListaUsuarios:[]
+    }
+
+    componentDidMount(){
+        var oService= new UsuarioService();
+        oService.Get().then(x=>{
+            this.setState({aListaUsuarios:x})
+        })
+    }
+
     render(){
-
-        let aListaUsuarios:Usuario[]=[];
-
-        for(let i=1;i<30;i++){
-            aListaUsuarios.push({id:i, nombre:`USuario ${i}`});
-        }
-
         return <div>
            {
-               aListaUsuarios.map(x=>{
+               (this.state.aListaUsuarios as Usuario[]).map(x=>{
                    return <p key={x.id} >
                        <Link to={`/Usuarios/${x.id}`}>{x.nombre}</Link>
                    </p>

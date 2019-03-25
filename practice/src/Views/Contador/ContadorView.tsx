@@ -38,7 +38,6 @@ state={
     //color:""
 }
 
-
 render(){
 
 
@@ -57,14 +56,16 @@ Sumar(cantidad:number){
 
     let iResult = this.state.currentValue + cantidad;
     let sColor="";
-    if(iResult<0)
-    {
-        //sColor="red";
-        (this.refs.mypinput as HTMLElement).style.color="red";;
-        //document.getElementById("mypinput")!.style.color="red";
-    }
-    else{
-        (this.refs.mypinput as HTMLElement).style.color="";
+    if(this.refs.mypinput as HTMLElement){
+        if(iResult<0)
+        {
+            //sColor="red";
+            (this.refs.mypinput as HTMLElement).style.color="red";
+            //document.getElementById("mypinput")!.style.color="red";
+        }
+        else{
+            (this.refs.mypinput as HTMLElement).style.color="";
+        }
     }
 
     //this.setState({currentValue:iResult, color:sColor});
