@@ -21,23 +21,29 @@ class App extends React.Component {
     aItemsMenu.push({nombe:"Semana", url:"/semana"});
     aItemsMenu.push({nombe:"Contador", url:"/contador"});
     aItemsMenu.push({nombe:"Sumador", url:"/sumador"});
-
+    aItemsMenu.push({nombe:"InsertUsuario", url:"/InsertUsuario"});
 
 
     return <div className={"clase"} style={{height:"5000px"}}>
     <BrowserRouter>
-          <Content>
+          <div>
             <MenuHorizontal items={aItemsMenu} fixed></MenuHorizontal>
-            <Route exact path="/" component={Vistas.HomeView}></Route>
-            <Route exact path="/Home" component={Vistas.HomeView}></Route>
-            <Route exact path="/USuarios" component={Vistas.UsuariosView}></Route>
-            <Route exact path="/About" component={Vistas.AboutView}></Route>
-            <Route exact path="/Semana" component={Vistas.SemanaView}></Route>
-            <Route exact path="/Usuarios/:id" component={Vistas.FichaUsuarioView}></Route>
-            <Route exact path="/Contador" component={Vistas.ContadorView}></Route>
-            <Route exact path="/Sumador" component={Vistas.SumadorView}></Route>          
+            <Content>
+              <Route exact path="/" component={Vistas.HomeView}></Route>
+              <Route exact path="/Home" component={Vistas.HomeView}></Route>
+              <Route exact path="/USuarios" component={Vistas.UsuariosView}></Route>
+              <Route exact path="/About" component={Vistas.AboutView}></Route>
+              <Route exact path="/Semana" component={Vistas.SemanaView}></Route>
+              <Route exact path="/Usuarios/:id" component={Vistas.FichaUsuarioView}></Route>
+              <Route exact path="/Contador" component={Vistas.ContadorView}></Route>
+              <Route exact path="/Sumador" component={Vistas.SumadorView}></Route> 
+              <Route exact path="/InsertUsuario" component={Vistas.InsertUsuarioView}></Route> 
+              <Route exact path="/UpdateUsuario/:id" component={Vistas.UpdateUsuarioView}></Route>          
 
-          </Content>
+
+            </Content>
+          </div>
+
     </BrowserRouter>
 
       </div>

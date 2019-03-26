@@ -5,6 +5,9 @@ export {HomeView} from "./Home/HomeView"
 export {FichaUsuarioView} from "./Usuarios/FichaUsuarioView"
 export {ContadorView} from "./Contador/ContadorView"
 export {SumadorView} from "./Contador/Sumador"
+export {InsertUsuarioView} from "./Usuarios/InsertUsuarioView"
+export {UpdateUsuarioView} from "./Usuarios/UpdateUsuarioView"
+
 
 
 

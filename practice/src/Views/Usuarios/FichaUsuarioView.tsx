@@ -10,7 +10,7 @@ interface IParams{
 export class FichaUsuarioView 
 extends React.Component<RouteComponentProps<IParams>,{user?:Usuario}>{
 
-state = {user:undefined}
+    state = {user:undefined}
 
     componentDidMount(){
         var oService= new UsuarioService();
@@ -20,13 +20,16 @@ state = {user:undefined}
     }
     
     render(){
+        let oReturn;
+
         if(this.state.user)
         {
             let user:Usuario = this.state.user!
-            return <div>Usuario con id {user.id} y con nombre {user.nombre}</div>
-
+            oReturn = <div>Usuario con id {user.id} y con nombre {user.nombre}</div>
         }
         else
-            return <div>Cargando</div>
+            oReturn = <div>Cargando...</div>
+        
+        return oReturn;
     }
 }
